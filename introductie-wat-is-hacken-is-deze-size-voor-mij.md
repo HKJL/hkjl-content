@@ -12,13 +12,17 @@ Welkom bij de allereerste tutorial op **hackenkunjeleren.nl**! In deze tutorial 
 
 Als je een willekeurig persoon op straat zou vragen “Wat is een hacker?” dan zullen ze zich misschien een krantenkop of film herinneren waarbij de term Hacker gebruikt wordt om te verwijzen naar een crimineel die een website gekraakt heeft, en de gevonden creditcardgegevens heeft doorverkocht op de zwarte markt. Dit is het gebruikelijke beeld wat in de media geschetst wordt van een hacker. Iemand die wat meer bekend is met computerbeveiliging zal zeggen dat een hacker een persoon is die veel kennis over computers en hun beveiliging heeft, en deze beveiliging kan doorbreken. Die omschrijving is al een heel stuk beter dan de vorige, maar het vat volgens mij nog steeds niet de essentie van wat een hacker nou eigenlijk is.
 
-Om maar meteen een cliché door te prikken: Hacken heeft in essentie helemaal niets met computers te maken. Er waren bijvoorbeeld in de middeleeuwen ook al hackers, ze gebruikten misschien geen apparaten die op elektriciteit werkten om hun werkwijzen en ideeën tot uitvoering te brengen, maar dat maakt deze personen niet minder ‘hacker’. Wij zijn tegenwoordig eigenlijk gewoon verwend met het feit dat technologie zo’n grote rol is gaan spelen in ons leven en de gehele maatschappij, maar de achtergrond achter het begrip blijft hetzelfde.
+Om maar meteen een cliché door te prikken: Hacken heeft in essentie helemaal niets met computers te maken. Er waren bijvoorbeeld in de middeleeuwen ook al hackers, ze gebruikten misschien geen apparaten die op elektriciteit werkten om hun werkwijzen en ideeën tot uitvoering te brengen, maar dat maakt deze personen niet minder ‘hacker’. Wij zijn tegenwoordig eigenlijk gewoon verwend met het feit dat technologie zo’n grote rol is gaan spelen in ons leven en de gehele maatschappij, maar de achtergrond achter het begrip blijft hetzelfde. 
+
+![Zo wil Hollywood je laten geloven dat alle hackers er uit zien](images/hacker.jpg)
 
 ## Definitie
 
 Maar wat is dan wel de definitie van een hacker? Een simpele korte definitie geven is lastig, maar ik kan wel proberen te beschrijven wat ik er mee bedoel. Hacken heeft te maken met het toepassen van creativiteit, kennis, vaardigheden en intelligentie om beperkingen en limitaties te overwinnen en om bijvoorbeeld een voorwerp voor iets anders te gebruiken dan waar het voor bedoeld is. Out-of-the-box denken is hier een sleutelwoord.
 
 Technologie is een erg geschikte omgeving om het hacken toe te passen, omdat technologie vaak gebruikt wordt om beperkingen en limitaties op te leggen. Of dat nou houten tandwielen in het jaar 1400 zijn, of high-tech computers uit de 21ste eeuw, maakt in principe niet uit. Maar ook andere gebieden zoals sociale interactie lenen zich prima om te ‘hacken’. Meer daarover in de tutorials over ‘Social Engineering’. 
+
+![Tekeningen door Leonardo da Vinci](images/davinci.jpg)
 
 Hacken heeft ook niets te maken met het overtreden van de wet. Het kán wel gebruikt worden om de wet te overtreden, maar dat is ook mogelijk met alleen je handen. Moet het dan verboden worden om je handen te gebruiken? Het leren over hacken is geen misdaad; pas wanneer je er voor kiest om de kennis of gereedschappen te gebruiken voor illegale doeleinden ben je strafbaar en zul je hiervoor de consequenties moeten aanvaarden. Wanneer je net begint in de wondere wereld van het hacken en je jezelf meer verdiept in computers en beveiliging, zul je misschien denken dat het spannend is om deze criminele route op te gaan. Bedenk goed dat je in de gevangenis erg weinig te hacken hebt, en dat je met een strafblad erg lastig die baan als pentester of ethical hacker zult kunnen krijgen. Mijn advies is: hou het legaal!
 
@@ -27,6 +31,8 @@ Hacken heeft ook niets te maken met het overtreden van de wet. Het kán wel gebr
 Openheid en delen is erg belangrijk in de hackergemeenschap, het helpt om ideeën te verspreiden en om elkaar te helpen en van elkaar te leren. Het resultaat hiervan is dat er erg veel tools, scripts en stukken code beschikbaar zijn op het Internet die gebruikt worden door hackers om op voort te bouwen of om taken die telkens opnieuw uitgevoerd moeten worden te automatiseren.
 
 Sommige van deze tools zijn erg gemakkelijk in het gebruik, en zijn ook prima te gebruiken door mensen die niet alle ins en outs kennen van de achterliggende theorie. Mensen die op zoek zijn naar een snelle en eenvoudige manier om een bepaalde hack te misbruiken om bijvoorbeeld een website neer te halen, of een systeem te onderzoeken of er zelfs op in te breken, maken graag gebruik van deze openheid. Dit zijn in de praktijk doorgaans jongere mensen die een klein beetje kennis hebben van computers, eigenlijk net genoeg om de tools en scripts van anderen te misbruiken. Deze groep mensen worden vaak ‘scriptkiddies’ genoemd. Deze site is niet bedoeld voor scriptkiddies, de tutorials geven geen snelle en eenvoudige oplossing, maar proberen juist aan te zetten tot het verdiepen in de stof en het zelf maken van nieuwe hulpmiddelen en code.
+
+![Een scriptkiddie](images/scriptkiddie.jpg)
 
 # Over deze site
 
@@ -48,8 +54,4 @@ Zoals op de voorpagina staat uitgelegd zijn de tutorials grofweg ingedeeld in Te
 
 Onder de meeste pagina’s staat een commentaarsectie. Hier kun je commentaar achter laten zoals vragen, suggesties, opmerkingen, correcties, en meer. Ik heb de mogelijkheid om commentaar te verwijderen, maar zal dit alleen doen als het bijvoorbeeld in strijd is met de wet of als het om spam gaat. Probeer het netjes te houden dus!
 
-Een andere manier om snel feedback te geven is via IRC. Bekijk de Introductie tot IRC tutorial als je wilt weten hoe dit werkt.
-
----
-
-Dit besluit de eerste tutorial, keer terug naar de lijst om de volgende tutorial in de Basis-categorie te starten!
+Een andere manier om snel feedback te geven is via IRC. Bekijk de [Introductie tot IRC](introductie-tot-irc) tutorial als je wilt weten hoe dit werkt.
