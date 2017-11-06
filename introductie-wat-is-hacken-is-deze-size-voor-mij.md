@@ -54,4 +54,4 @@ Zoals op de voorpagina staat uitgelegd zijn de tutorials grofweg ingedeeld in Te
 
 Onder de meeste pagina’s staat een commentaarsectie. Hier kun je commentaar achter laten zoals vragen, suggesties, opmerkingen, correcties, en meer. Ik heb de mogelijkheid om commentaar te verwijderen, maar zal dit alleen doen als het bijvoorbeeld in strijd is met de wet of als het om spam gaat. Probeer het netjes te houden dus!
 
-Een andere manier om snel feedback te geven is via IRC. Bekijk de [Introductie tot IRC](introductie-tot-irc) tutorial als je wilt weten hoe dit werkt.
+Een andere manier om snel feedback te geven is via IRC. Bekijk de [Introductie tot IRC](introductie-tot-irc.html) tutorial als je wilt weten hoe dit werkt.
