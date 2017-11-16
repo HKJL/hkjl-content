@@ -15,7 +15,7 @@ Hieronder staat een lijst met alle tutorials op hackenkunjeleren.nl, gesorteerd 
 * [Introductie tot IRC](../introductie-tot-irc.html)
 * [Slimme vragen stellen: hoe hou je je medehackers te vriend?](../slimme-vragen-stellen-hoe-hou-je-je-medehackers-te-vriend.html)
 * [Je eigen Linux systeem!](../je-eigen-linux-systeem.html)
-* [Introductie tot Linux – Deel 1](../introductie-tot-linux-deel-1.html)
+* [Introductie tot Linux – Deel 1](../introductie-tot-linux.html)
 * [Introductie tot Linux – Deel 2](../introductie-tot-linux-deel-2.html)
 
 ## Gepland
