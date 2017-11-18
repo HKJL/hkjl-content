@@ -58,9 +58,9 @@ Nog iets wat je misschien opgevallen is, is dat er meerdere commando’s zijn di
 <div class="opdracht">
   <p>Opdracht 2</p>
   <div class="subopdracht">Probeer bovenstaande commando’s eens uit en observeer wat er gebeurt.</div>
-  <div class="subopdracht">Wat gebeurt er als je `sudo` weglaat en alleen maar `halt` intypt?</div>
-  <div class="subopdracht">Wat gebeurt er als je `sudo shutdown` zonder opties intypt?</div>
-  <div class="subopdracht">Wat gebeurt er als je bij `sudo shutdown` wel de optie `-h` opgeeft maar hier geen argument achter zet?</div>
+  <div class="subopdracht">Wat gebeurt er als je <code>sudo</code> weglaat en alleen maar <code>halt</code> intypt?</div>
+  <div class="subopdracht">Wat gebeurt er als je <code>sudo shutdown</code> zonder opties intypt?</div>
+  <div class="subopdracht">Wat gebeurt er als je bij <code>sudo shutdown</code> wel de optie <code>-h</code> opgeeft maar hier geen argument achter zet?</div>
 </div>
 
 **Let op**: Voordat we doorgaan naar het volgende hoofdstuk is het belangrijk om te vermelden dat je een Linux systeem nooit zomaar uit mag zetten zonder de goede afsluitprocedure te volgen. Als je de VM geforceerd afsluit in VirtualBox dan gebeurt er hetzelfde als wanneer je bij een echte computer de stekker er zomaar uit trekt. Linux krijgt dan namelijk niet de kans om ‘netjes’ alle processen die lopen te beeindigen, wat kan betekenen dat je bestanden kwijtraakt die recentelijk zijn bewerkt en/of dat je schijf corrupt raakt!
@@ -122,13 +122,13 @@ Commando                           | Uitleg
 <div class="opdracht">
   <p>Opdracht 4</p>
   <div class="subopdracht">Zoek op in welke map je op dit moment bent en bekijk de inhoud van de huidige map. Dit is onze eigen thuis (home) map waarin we alles mogen doen wat we willen, zonder dat andere gebruikers op het systeem daar last van hebben.</div>
-  <div class="subopdracht">Maak hier een nieuwe map aan, met de naam ‘notities’, en bekijk daarna opnieuw de inhoud van de huidige map.</div>
-  <div class="subopdracht">Navigeer van de huidige map naar de map ‘notities’ die je zojuist hebt aangemaakt en maak daarin een bestand met de naam ‘notitie1’</div>
+  <div class="subopdracht">Maak hier een nieuwe map aan, met de naam <code>notities</code>, en bekijk daarna opnieuw de inhoud van de huidige map.</div>
+  <div class="subopdracht">Navigeer van de huidige map naar de map <code>notities</code> die je zojuist hebt aangemaakt en maak daarin een bestand met de naam <code>notitie1</code></div>
   <div class="subopdracht">Ga terug naar de map waar je begon (je home map).</div>
-  <div class="subopdracht">Geef de map ‘notities’ een nieuwe naam: ‘notes’.</div>
-  <div class="subopdracht">Kopieer het bestand ‘notitie1’ uit de map ‘notes’ naar de map waar je begon.</div>
-  <div class="subopdracht">Probeer de map ‘notes’ te verwijderen. Waarom lukt dit niet? Verwijder het bestand wat er voor zorgt dat je de map niet kan verwijderen en probeer het opnieuw.</div>
-  <div class="subopdracht">Bekijk de inhoud van de root map (`/`) en probeer wat door de mappen hierin te navigeren. Zijn er mappen waar je niet in kunt komen? In welke map staan de meeste bestanden denk je?</div>
+  <div class="subopdracht">Geef de map <code>notities</code> een nieuwe naam: <code>notes</code>.</div>
+  <div class="subopdracht">Kopieer het bestand <code>notitie1</code> uit de map <code>notes</code> naar de map waar je begon.</div>
+  <div class="subopdracht">Probeer de map <code>notes</code> te verwijderen. Waarom lukt dit niet? Verwijder het bestand wat er voor zorgt dat je de map niet kan verwijderen en probeer het opnieuw.</div>
+  <div class="subopdracht">Bekijk de inhoud van de root map (<code>/</code>) en probeer wat door de mappen hierin te navigeren. Zijn er mappen waar je niet in kunt komen? In welke map staan de meeste bestanden denk je?</div>
 </div>
 
 Tip: Gebruik het commando `clear` om het scherm leeg te maken zodat je wat meer overzicht krijgt! Als je er echt niet meer uit komt kun je altijd uitloggen met `logout` en weer opnieuw inloggen.
@@ -152,7 +152,7 @@ Linux houdt hiervoor een speciaal lijstje bij van alle bestanden en mappen in he
 
 Als je iets specifieker wil zoeken dan zul je gebruik moeten maken van het commando `find`. Dit commando heeft geen speciale lijst die hij snel kan doorzoeken, maar het zoekt echt de harde schijf door. Hierdoor is het trager dan `locate`.
 
-Je kan met dit commando allerlei speciale condities opgeven, waar ik hier een paar voorbeelden van zal geven. Het kan best gebeuren dat je meldingen krijgt met ‘Permission denied’, want find probeert elke map die hij tegenkomt in te gaan, ook al heeft jouw gebruikersaccount hier misschien helemaal geen toegang toe. Hoe we deze foutmeldingen kunnen weg laten leren we in deel twee van deze tutorial.
+Je kan met dit commando allerlei speciale condities opgeven, waar ik hier een paar voorbeelden van zal geven. Het kan best gebeuren dat je meldingen krijgt met ‘Permission denied’, want find probeert elke map die hij tegenkomt in te gaan, ook al heeft jouw gebruikersaccount hier misschien helemaal geen toegang toe. Hoe we deze foutmeldingen kunnen weg laten leren we in deel 3 van deze tutorial.
 
 Commando                       | Uitleg
 ------------------------------ | ------------------------------
@@ -170,7 +170,7 @@ Het komt nog wel eens voor dat je moet werken met hele lange bestands- of mapnam
 
 <div class="opdracht">
   <p>Opdracht 5</p>
-  <div class="subopdracht">Ga de map `/usr/src/` in en bekijk welke bestanden en mappen hier in staan. Realiseer je dat je deze lange namen niet wil intypen en voer alleen het commando `cd` gevolgd door de eerste paar letters van de namen in. Druk nu op de &lt;tab&gt; toets op je toetsenbord en kijk wat er gebeurt. Wat gebeurt er als je nog een paar keer op tab drukt?</div>
+  <div class="subopdracht">Ga de map <code>/usr/src/</code> in en bekijk welke bestanden en mappen hier in staan. Realiseer je dat je deze lange namen niet wil intypen en voer alleen het commando <code>cd</code> gevolgd door de eerste paar letters van de namen in. Druk nu op de &lt;tab&gt; toets op je toetsenbord en kijk wat er gebeurt. Wat gebeurt er als je nog een paar keer op tab drukt?</div>
   <div class="subopdracht">Probeer eens de eerste letter van een commando in te typen, en druk twee keer op de &lt;tab&gt; toets. Je krijgt alle mogelijke commando’s die met deze letter beginnen te zien! Ga zo enkele letters af om te zien hoeveel commando’s Linux wel niet heeft.</div>
 </div>
 
@@ -188,10 +188,10 @@ Tip: Je kan bij de meeste commando’s meerdere losse opties zoals `-r -i` ook s
 
 <div class="opdracht">
   <p>Opdracht 6</p>
-  <div class="subopdracht">Zoek naar alle regels in het bestand `/etc/group` waarin je gebruikersnaam voorkomt.</div>
-  <div class="subopdracht">Op welk regelnummer komt ‘battery’ het eerst voor in het bestand `/etc/hdparm.conf` ?</div>
-  <div class="subopdracht">Welke bestanden in de map `/etc/pam.d/` bevatten het woord `password` ?</div>
-  <div class="subopdracht">In het bestand `/etc/hdparm.conf` staat een hoop commentaar, wat dient als documentatie. Elke commentaar-regel begint met een `#`. Gebruik 1 `grep` commando om te achterhalen wat er behalve dit commentaar in het bestand staat.</div>
+  <div class="subopdracht">Zoek naar alle regels in het bestand <code>/etc/group</code> waarin je gebruikersnaam voorkomt.</div>
+  <div class="subopdracht">Op welk regelnummer komt <code>battery</code> het eerst voor in het bestand <code>/etc/hdparm.conf</code> ?</div>
+  <div class="subopdracht">Welke bestanden in de map <code>/etc/pam.d/</code> bevatten het woord <code>password</code> ?</div>
+  <div class="subopdracht">In het bestand <code>/etc/hdparm.conf</code> staat een hoop commentaar, wat dient als documentatie. Elke commentaar-regel begint met een <code>#</code>. Gebruik 1 <code>grep</code> commando om te achterhalen wat er behalve dit commentaar in het bestand staat.</div>
 </div>
 
 We sluiten dit hoofdstuk af met enkele tekens die je in alle commando’s kunt gebruiken die we net geleerd hebben. Als je deze tekens slim gebruikt hoef je een stuk minder te typen en kun je op veel systemen dezelfde commando’s gebruiken, ook al verschillen de mappen misschien van naam. Het gaat om drie tekens / tekencombinaties:
@@ -204,6 +204,181 @@ Tekens | Uitleg | Voorbeeld
 
 Tip: Als je net met cd naar een andere map bent genavigeerd, onthoudt Linux in welke map je hiervoor zat. Gebruik daarvoor cd -. Je kan op die manier heel eenvoudig tussen twee locaties wisselen.
 
-# Tekstbestanden
+# 2. Tekstbestanden
 
-TODO
+Het soort bestand wat we het meeste zullen gaan gebruiken in alle tutorials is een _tekstbestand_. In tegenstelling tot bijvoorbeeld video’s, afbeeldingen of programma’s zijn tekstbestanden gewoon leesbaar voor mensen. Bijna alle configuratiebestanden, broncode van programma’s, websites, scripts, en nog veel meer zijn in essentie allemaal tekstbestanden.
+
+Deze bestanden kun je openen in een _editor_ waarna je de inhoud kan bekijken en aanpassen. Ook kun je de inhoud van zo’n bestand direct in je terminal bekijken door het commando `cat` te gebruiken gevolgd door het volledige pad van een bestand, of een bestandsnaam als je je al in de goede map bevindt. Bijvoorbeeld: `cat /etc/hosts`.
+
+Er zijn een heleboel soorten editors op Linux die elk andere eigenschappen hebben. Een editor die eenvoudig te gebruiken is, is `nano`. Dit programma is al standaard geinstalleerd op Ubuntu dus dit kunnen we meteen gaan gebruiken. Veel uitgebreidere editors die vaak door programmeurs en hackers gebruikt worden zijn `emacs` en `vim` maar omdat deze nogal een steile leercurve hebben zullen we hier in deze tutorial geen gebruik van maken. 
+
+Type nu `nano` in de terminal en druk op enter, het volgende scherm verschijnt:
+
+![Nano interface](images/linux-nano.png)
+
+We kunnen direct gaan typen zoals je dit ook gewend bent in bijvoorbeeld kladblok of wordpad op Windows. Je kunt de pijltjestoetsen gebruiken om door regels heen te navigeren, en toetsen zoals Home, End, PageUp en PageDown kun je ook gebruiken.
+
+Onderaan staat een rij met acties die we kunnen uitvoeren met de sneltoetsen die we hiervoor moeten gebruiken er naast. Het `^` teken betekent dat we de Ctrl toets moeten gebruiken in combinatie met de letter die er achter staat. De belangrijkste voor nu zijn Ctrl+X voor het verlaten van nano (Exit) en Ctrl+O voor het opslaan van een bestand (WriteOut). Als we een nieuw bestand aan het typen zijn wordt bij het opslaan gevraagd wat de naam van het bestand moet worden. Dit wordt vervolgens in de map opgeslagen waarin we nano hebben opgestart. Als we nano afsluiten terwijl er nog niet-opgeslagen wijzigingen zijn, wordt ons ook gevraagd of we deze nog willen opslaan.
+
+De handigste manier om een tekstbestand te openen in nano is door het als argument mee te geven vanaf de terminal. Bijvoorbeeld: `nano /etc/hosts` start nano en opent meteen het bestand wat je hebt opgegeven.
+
+<div class="opdracht">
+  <p>Opdracht 7</p>
+  <div class="subopdracht">Ga terug naar je home map, maak hier een nieuwe map aan met de naam ‘tekstbestanden’, en plaats een kopie van het bestand /etc/hosts in deze map.</div>
+  <div class="subopdracht">Open het bestand wat we net in de nieuwe map hebben geplaatst met nano. Gebruik de pijltjestoetsen of andere toetsen om naar het einde van de langste regel te gaan en voeg hier enkele woorden toe.</div>
+  <div class="subopdracht">Sla het bestand op, sluit nano weer af en controleer of je wijzigingen zijn verwerkt door het bestand met <code>cat</code> te tonen op de terminal.</div>
+  <div class="subopdracht">Open het bestand <code>/etc/passwd</code> met nano en probeer dit te wijzigen en op te slaan. Wat gebeurt er? Kun je het opslaan in je eigen home map?</div>
+</div>
+
+# 3. Gebruikers en groepen
+
+In de laatste vraag van de vorige opdracht probeerden we om een bestand te bewerken waar we geen toegang tot hadden, het bestand `/etc/passwd`. Dit komt omdat we niet de eigenaar waren van dit bestand, en niet iedereen dit bestand zomaar mag bewerken. Voor dit laatste is een goede reden, in dit bestand staat namelijk een lijst van alle gebruikers op dit systeem en de eigenschappen van al deze gebruikers.
+
+Een gebruiker op linux is niet veel meer dan een combinatie van de volgende eigenschappen, die worden opgeslagen in onder andere het bestand `/etc/passwd`. Laten we de laatste regel van dit bestand op mijn ubuntu systeem er eens bij pakken, dat is namelijk mijn eigen gebruiker:
+
+`sling:x:1000:1000:sling,,,:/home/sling:/bin/bash`
+
+De velden die je daar van links naar rechts per regel ziet staan (gescheiden door een : teken) zijn:
+
+- Gebruikersnaam
+- Wachtwoord
+- User ID (een getal, bijvoorbeeld 1001)
+- Group ID
+- Commentaar (de 3 komma’s die hier staan hebben een historische achtergrond, vroeger stonden hier ook extra zaken zoals telefoonnummer, kamernummer, - locatie, etc., gescheiden door komma’s)
+- Home directory
+- Shell (het programma wat onze commando’s interpreteert)
+
+Het zal je misschien al opgevallen zijn dat er een ‘x’ staat in het wachtwoord veld. Dat is natuurlijk niet het echte wachtwoord, dat staat namelijk versleuteld in het bestand `/etc/shadow` waar normale gebruikers niet bij kunnen.
+
+Tijdens de installatie van ons Linux systeem hebben we de naam moeten opgeven van ons gebruikersaccount, en met dat account hebben we ook ingelogd op het systeem. Je zag in de vorige opdracht ook dat er een flinke lijst andere gebruikers bestaan op het systeem. Dit zijn allemaal gebruikers die ingebouwd zijn in Ubuntu voor diverse doeleinden.
+
+Er is 1 bijzondere gebruiker en die staat helemaal bovenaan de lijst in het bestand `/etc/passwd`, de gebruiker `root`. Dit is een account waarmee we het systeem kunnen beheren, en alle commando’s kunnen uitvoeren, inclusief commando’s die – als ze niet goed worden aangeroepen – het systeem kunnen beschadigen of onbruikbaar kunnen maken. Het klinkt misschien leuk of makkelijk om altijd als root te werken zodat je geen last hebt van restricties en alles kan doen, maar dit is erg gevaarlijk. Je hoeft maar een typefout te maken en je hebt misschien wel alle bestanden op het systeem verwijderd! Je kan om die reden niet als root inloggen op de ‘login:’ prompt en er is ook geen standaard wachtwoord voor ingesteld.
+
+![User Accounts](images/User-Accounts.png)
+
+Linux is daarnaast bedoeld als systeem om met meerdere gebruikers tegelijk op te kunnen werken. Gebruikers kunnen via het netwerk inloggen (hoe dat gaat zien we in deel 3 van deze tutorial) en allerlei acties uitvoeren zonder dat ze last van elkaar hebben. Je kan je voorstellen dat bijvoorbeeld het afsluiten van een systeem iets is wat niet alle gebruikers zomaar mogen doen, want misschien zijn er wel mensen bezig met het schrijven van een tekstbestand en raken die wijzigingen zomaar verloren omdat het systeem uitgezet wordt. Daarom is het shutdown commando wat we eerder hebben gebruikt een commando wat alleen de root gebruiker mag uitvoeren.
+
+Toch konden we de computer uitzetten, door `sudo` voor dit commando te zetten. Sudo geeft ons namelijk tijdelijk dezelfde rechten als de root gebruiker, alleen voor het commando wat we er achter zetten. Niet iedereen mag zomaar sudo gebruiken, daarom is er een speciale groep waar gebruikers in gezet kunnen worden die deze rechten nodig hebben.
+
+Dit brengt ons op een nieuw concept: _groepen_. Groepen kunnen gebruikers bevatten, en elke gebruiker zit minimaal in 1 groep maar kan ook in meerdere groepen tegelijk zitten. Een voorbeeld is dus de ‘sudo’ groep, waarin alle gebruikers zitten op het systeem die met ‘sudo’ commando’s mogen uitvoeren.
+
+Laten we de belangrijkste commando’s die er zijn om met gebruikers en groepen te werken eens op een rij zetten:
+
+Commando                | Uitleg 
+----------------------- | ----------------------- 
+`sudo adduser pietje`   | Voeg een gebruiker toe met de naam `pietje`. Er wordt om een wachtwoord gevraagd en om extra optionele informatie zoals de volledige naam van de gebruiker. Dit commando maakt ook meteen een groep aan met de naam `pietje`, en maakt dit de primaire groep van de nieuwe gebruiker.
+`sudo usermod pietje`   | Met dit commando kun je allerlei opties aanpassen van de gebruiker `pietje`. Als je geen optie of argument opgeeft, krijg je een lange lijst te zien van wat er mogelijk is. Een voorbeeld van zo’n optie is `usermod pietje -aG sudo,verkoop`, wat de gebruiker `pietje` toevoegt aan de groepen `sudo` en `verkoop`.
+`sudo deluser pietje`   | Verwijder de gebruiker met de naam `pietje`.
+`sudo addgroup verkoop` | Voeg een groep toe met de naam `verkoop`.
+`sudo delgroup verkoop` | Verwijder de groep met de naam `verkoop`.
+`groups pietje`         | Bekijk in welke groepen de gebruiker `pietje` zit.
+`passwd`                | Pas het wachtwoord aan van de huidige gebruiker.
+`sudo passwd pietje`    | Pas het wachtwoord aan van de gebruiker `pietje`. Alleen de root gebruiker mag andermans wachtwoorden aanpassen, vandaar dat hier `sudo` voor moet staan.
+`whoami`                | Laat zien als welke gebruiker je op dit moment bent ingelogd op het systeem.
+`id`                    | Laat zien als welke gebruiker, primaire groep en extra groepen (inclusief alle ID’s) je op dit moment commando’s uitvoert.
+
+<div class="opdracht">
+  <p>Opdracht 8</p>
+  <div class="subopdracht">Maak twee nieuwe gebruikers aan: <code>alice</code> en <code>bob</code>.</div>
+  <div class="subopdracht">Maak een nieuwe groep aan met de naam <code>hackers</code> en maak de <code>alice</code> en <code>bob</code> hier lid van.</div>
+  <div class="subopdracht">Oeps, Alice heeft haar wachtwoord laten uitlekken. Wijzig haar wachtwoord naar <code>veiligwachtwoord</code>.</div>
+  <div class="subopdracht">Alice heeft nog een keer haar wachtwoord doorverteld. Nu zijn we er wel klaar mee, verwijder haar gebruikersaccount.</div>
+  <div class="subopdracht">Je bent nog ingelogd als je eigen gebruiker, bekijk de uitvoer van <code>id</code>. In welke groepen zit je allemaal?</div>
+  <div class="subopdracht">Voer nu <code>sudo id</code> uit, verklaar wat je hier ziet.</div>
+</div>
+
+Dit besluit deel 1 van de tutorial ‘Introductie tot Linux’, goed dat je het zo lang hebt volgehouden! In het volgende deel zullen we de volgende onderwerpen bespreken:
+
+- Beveiliging
+- Software installeren en updaten
+- Netwerkbeheer
+- Inloggen via SSH
+- Handleidingen en andere hulp
+
+Voordat je naar de [volgende tutorial](introductie-tot-linux-deel-2.html) gaat is het een goed plan om nog eens deze tutorial door te lopen en je af te vragen of je elk commando kent. Probeer nog eens zelf wat creatiefs te verzinnen met deze commando’s en oefen, oefen, oefen. Door alleen maar deze tekst te lezen zul je na korte tijd deze kennis alweer kwijt zijn dus het is belangrijk om het vaak toe te passen.
+
+---
+
+# Antwoorden op opdrachten
+
+Hieronder zijn per opdracht de antwoorden te bekijken, door op de juiste opdracht te klikken. Probeer natuurlijk wel eerst de opdrachten te maken, anders leer je de stof niet goed en kom je bij andere tutorials kennis te kort, met valsspelen heb je alleen jezelf.
+
+<details>
+  <summary>Opdracht 1</summary>
+  <ul>
+    <li>Als je een gebruikersnaam invult die niet bestaat, wordt er toch om een wachtwoord gevraagd. Een foutmelding dat de gebruikersnaam niet bestaat zou een aanvaller precies kunnen vertellen welke gebruikersnamen geldig zijn op de server en dat willen we liever niet.</li>
+    <li>Als je een verkeerd wachtwoord invult, dan zul je zien dat je weer overnieuw een gebruikersnaam moet invullen. Als je een typefout gemaakt hebt in je gebruikersnaam zou je hem op deze manier ook nog kunnen corrigeren.</li>
+    <li>Als de laatste stap niet lukt, dan zul je de virtuele machine opnieuw moeten installeren volgens de vorige tutorial. Onthoud goed je gebruikersnaam en wachtwoord!</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Opdracht 2</summary>
+  <ul>
+    <li>De eerste opdracht bestaat alleen uit het uitvoeren van de commando’s. Je zal gemerkt hebben dat Linux een stuk sneller kan opstarten dan Windows.</li>
+	<li>Je krijgt een foutmelding die aangeeft dat je ‘root’ moet zijn. Wat dat precies betekent zien we iets verderop in deze tutorial.</li>
+	<li>Zonder extra opties weet het commando <code>shutdown</code> niet wat het moet doen. Het vertelt ons zelfs dat het een tijd verwacht als argument, en verwijst ons naar het commando <code>shutdown –help</code> voor meer informatie. Bonuspunten als je hier ook naar gekeken hebt!</li>
+ 	<li>Ook met de optie <code>-h</code>, die vertelt dat we een ‘halt’ willen uitvoeren, moeten we nog steeds een tijdstip opgeven.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Opdracht 3</summary>
+  <ul>
+    <li>Deze vier bestanden hebben de volgende paden: <code>/document</code>, <code>/home/rapport</code>, <code>/home/spreekbeurt</code> en <code>/home/piet/dagboek</code>.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Opdracht 4</summary>
+  <ul>
+	<li>Bekijk de huidige map met <code>pwd</code> (we krijgen dan iets te zien zoals <code>/home/sling</code>) en de inhoud van deze map met <code>ls</code> (zonder verdere opties of argumenten). Er staat nu nog niks in de map, omdat het een helemaal nieuw systeem is.</li>
+	<li>Met het commando <code>mkdir notities</code> maak je in de huidige map een nieuwe map aan. Met <code>ls</code> zien we nu ineens deze map staan.</li>
+	<li>Met het commando <code>cd notities</code> verplaatsen we ons naar deze nieuwe map. Een nieuw bestand aanmaken kan met <code>touch notitie1</code>.</li>
+	<li>Om terug te gaan naar de home map, typen we in wat we bij de eerste opdracht zagen, bijvoorbeeld: <code>cd /home/sling</code>.</li>
+	<li>Een map hernoemen is eigenlijk hetzelfde als de map verplaatsen naar een andere map met een andere naam. We gebruiken dus <code>mv notities notes</code>.</li>
+	<li>Het bestand notitie1 is met de vorige actie ook meeverhuisd naar de map ‘notes’. Om dit bestand naar onze home map te kopieren gebruiken we: <code>cp notes/notitie1 /home/sling</code>.</li>
+	<li>Volgens de instructies zouden we de directory kunnen verwijderen met <code>rmdir</code> notes maar we krijgen de melding ‘Directory not empty’. De map moet dus leeg zijn voordat we deze kunnen verwijderen. Om te zien welk bestand hier in staat gebruiken we <code>ls notes</code> of <code>cd notes</code> gevolgd door <code>ls</code>. Vervolgens verwijderen we het bestand met <code>rm notes/notitie1</code> als we nog in de home map zaten, of met <code>rm notitie1</code> als we naar de map notes gegaan waren. Om uiteindelijk de map te kunnen verwijderen gaan we terug naar onze home map (als je dat nog niet was) met <code>cd /home/sling</code> en nu kunnen we <code>rmdir notes</code> gebruiken!</li>
+	<li>Met <code>ls /</code> zien we alle mappen en bestanden die in de root van het bestandssysteem staan. Je kan met <code>cd /bin</code> bijvoorbeeld de map <code>bin</code> in gaan en hier <code>ls</code> uitvoeren. Gebruik je creativiteit! Als het goed is kom je ook de map <code>/root</code> tegen, waar je niet in mag.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Opdracht 5</summary>
+  <ul>
+    <li>Zodra je op tab drukt wordt de rest van de bestandsnaam aangevuld, tot het punt waarop er meerdere mogelijkheden zijn. Als je daarna nog twee keer op tab drukt wordt een lijst getoond van de mogelijkheden.</li>
+	<li>Dit werkt dus niet alleen voor mappen en bestanden maar ook voor commando’s op de shell. Er zijn meer dan 1000 verschillende commando’s beschikbaar op een standaard Ubuntu installatie, en nog veel meer als je er een uitgebreide selectie aan software op installeert.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Opdracht 6</summary>
+  <ul>
+    <li><code>grep 'sling' /etc/group</code> (het resultaat zal ergens tussen de 5 en 10 regels zijn)</li>
+    <li><code>grep -n 'battery' /etc/hdparm.conf</code> zou moeten laten zien dat op regel 42 het woord battery voor het eerst voorkomt.</li>
+    <li><code>grep -r 'password' /etc/pam.d/</code> zou 11 bestanden moeten laten zien waarin dit woord voorkomt.</li>
+    <li><code>grep -v '#' /etc/hdparm.conf</code> laat zien dat er eigenlijk alleen ‘quiet’ in staat.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Opdracht 7</summary>
+  <ul>
+    <li><code>cd ~ mkdir tekstbestanden</code>, <code>cp /etc/hosts ~/tekstbestanden</code></li>
+	<li><code>nano ~/tekstbestanden/hosts</code></li>
+	<li>Gebruik Ctrl+W om het bestand op te slaan en druk op enter om dezelfde bestandsnaam aan te houden, Ctrl+X om nano te verlaten, en <code>cat ~/tekstbestanden/hosts</code> om de inhoud van het gekopieerde en bewerkte bestand te tonen.</li>
+	</li>Zodra je het bestand hebt geopend zie je onderin al staan ‘Warning: No write permission’. Als je het bestand daarna met Cltr+O probeert op te slaan, krijg je nogmaals een vergelijkbare melding. We hebben blijkbaar geen rechten om dit bestand aan te passen. Wel kunnen we deze tekst opslaan in onze eigen home map, omdat we daar wel alle rechten hebben.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Opdracht 8</summary>
+  <ul>
+    <li><code>sudo adduser alice</code>, <code>sudo adduser bob</code>. Let op dat je eerst je eigen password moet invullen bij het eerste gebruik van sudo, en later de passwords van de nieuwe gebruikers!</li>
+	<li><code>sudo addgroup hackers</code>, <code>sudo usermod alice -aG hackers</code>, <code>sudo usermod bob -aG hackers</code></li>
+	<li><code>sudo passwd alice</code></li>
+	<li><code>sudo deluser alice</code>. Let op de melding die je krijgt, er is een groep aangemaakt tijdens het aanmaken van de user ‘alice’ en die groep heet ook ‘alice’. Deze groep bestaat nu nog steeds op ons systeem.</li>
+	<li>Standaard zit het eerste gebruikersaccount wat je tijdens de installatie van Ubuntu aanmaakt in allerlei groepen, die je met het commando <code>id</code> kunt zien. Dit zijn bijvoorbeeld de groepen adm, cdrom, sudo, dip, plugdev, lpadmin en sambashare. Je hoeft niet te weten wat al deze groepen precies doen, maar als het goed is weet je wel waar de groep sudo voor is.</li>
+	<li>Alles wat je met <code>sudo</code> uitvoert, krijgt tijdelijk root-rechten. Dus ook het commando <code>id</code>. Je ziet dus in welke groepen root zit, en dat is alleen de groep ‘root’.</li>
+  </ul>
+</details>
