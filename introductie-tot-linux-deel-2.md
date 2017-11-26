@@ -219,9 +219,9 @@ Wanneer je toch wil upgraden naar een hogere versie, bijvoorbeeld als de volgend
   <p>Opdracht 3</p>
   <div class="subopdracht">Sinds de installatie van ons systeem loopt de informatie die Ubuntu heeft over de nieuwe pakketten weer een stuk achter. Geef het commando om de lijsten met pakketten te vernieuwen.</div>
   <div class="subopdracht">Geef het commando om deze updates te installeren. Onze kernel-versie willen we op dit moment nog hetzelfde laten. Hoeveel updates staan er klaar? Hoeveel schijfruimte kost dit of gaat dit besparen? Kijk na het installeren nog eens of er nog updates te installeren zijn.</div>
-  <div class="subopdracht">Ter ontspanning willen we graag het spel Space Invaders spelen, en dan wel de speciale _ncurses_ versie. Zoek op hoe dit pakket heet.</div>
+  <div class="subopdracht">Ter ontspanning willen we graag het spel Space Invaders spelen, en dan wel de speciale <i>ncurses</i> versie. Zoek op hoe dit pakket heet.</div>
   <div class="subopdracht">Installeer het space invaders spel en probeer het uit. Als je bekomen bent van al het grafische spektakel kun je het spel afsluiten en weer verwijderen.</div>
-  <div class="subopdracht">Laten we nu ook onze kernel updaten. Geef hiervoor het juiste commando op. Bekijk de huidige kernelversie met het commando `uname -r`, herstart de virtuele machine, en voer dit commando nogmaals uit om te kijken of het versienummer nu verhoogd is.</div>
+  <div class="subopdracht">Laten we nu ook onze kernel updaten. Geef hiervoor het juiste commando op. Bekijk de huidige kernelversie met het commando <code>uname -r</code>, herstart de virtuele machine, en voer dit commando nogmaals uit om te kijken of het versienummer nu verhoogd is.</div>
   <div class="subopdracht">Kijk of er na het installeren van al deze updates pakketten zijn die niet meer nodig zijn en dus verwijderd kunnen worden.</div>
 </div>
 
@@ -256,7 +256,7 @@ Let op: Gebruik nooit `dpkg -r` om pakketten te verwijderen die je met je packag
   <p>Opdracht 4</p>
   <div class="subopdracht">Kijk eens in het bestand <code>/etc/apt/sources.list</code> om te kijken welke repositories er nu actief zijn. De regels die met een # beginnen zijn commentaar en tellen dus niet mee. Hoe kon je dit ook alweer makkelijk met 1 commando zien?</div>
   <div class="subopdracht">Download het bestand <code>https://hackenkunjeleren.nl/files/cowsay.deb</code> en installeer dit pakket. Probeer hierna het commando <code>cowsay Hello World!</code> uit.</div>
-  <div class="subopdracht"></div>
+  <div class="subopdracht">Kijk welke bestanden er allemaal horen bij het zojuist geinstalleerde pakket <code>cowsay</code>.</div>
 </div>
 
 ## Installeren van broncode
