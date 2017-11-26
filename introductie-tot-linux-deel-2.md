@@ -217,7 +217,7 @@ Wanneer je toch wil upgraden naar een hogere versie, bijvoorbeeld als de volgend
 
 <div class="opdracht">
   <p>Opdracht 3</p>
-  <div class="subopdracht">Sinds de installatie van ons systeem loopt de informatie die Ubuntu heeft over de nieuwe pakketten weer een stuk achter. Geef het commando om de lijsten met pakketen te vernieuwen.</div>
+  <div class="subopdracht">Sinds de installatie van ons systeem loopt de informatie die Ubuntu heeft over de nieuwe pakketten weer een stuk achter. Geef het commando om de lijsten met pakketten te vernieuwen.</div>
   <div class="subopdracht">Geef het commando om deze updates te installeren. Onze kernel-versie willen we op dit moment nog hetzelfde laten. Hoeveel updates staan er klaar? Hoeveel schijfruimte kost dit of gaat dit besparen? Kijk na het installeren nog eens of er nog updates te installeren zijn.</div>
   <div class="subopdracht">Ter ontspanning willen we graag het spel Space Invaders spelen, en dan wel de speciale _ncurses_ versie. Zoek op hoe dit pakket heet.</div>
   <div class="subopdracht">Installeer het space invaders spel en probeer het uit. Als je bekomen bent van al het grafische spektakel kun je het spel afsluiten en weer verwijderen.</div>
