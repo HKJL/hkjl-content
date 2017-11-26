@@ -275,9 +275,9 @@ Dit is niet altijd triviaal, soms moet je ook nog zelf andere pakketten installe
 
 <div class="opdracht">
   <p>Opdracht 5</p>
-  <div class="subopdracht">Pacman is natuurlijk een klassieker die we wel eens willen spelen. Helaas is de versie die we willen niet als Ubuntu pakket beschikbaar, maar als ingepakt bestand met broncode. Deze is hier te downloaden: `https://hackenkunjeleren.nl/files/pacman.tar.gz`. Download dit bestand in je virtuele machine, en pak het uit. Ga vervolgens de map in die bij het uitpakken is aangemaakt.</div>
-  <div class="subopdracht">Om pacman te kunnen compileren hebben we eerst extra pakketten nodig, en alle afhankelijkheden die hierbij horen. Ook missen we nog het `make` commando. Installeer de pakketten `groff`, `libncurses5-dev`, `build-essential` en `make`.</div>
-  <div class="subopdracht">We kunnen nu het spel compileren met de commando’s: `./configure` en `make`. Dit kan even duren, en er kunnen waarschuwingen op het scherm te zien zijn, maar dit is niets om ons druk over te maken.</div>
+  <div class="subopdracht">Pacman is natuurlijk een klassieker die we wel eens willen spelen. Helaas is de versie die we willen niet als Ubuntu pakket beschikbaar, maar als ingepakt bestand met broncode. Deze is hier te downloaden: <code>https://hackenkunjeleren.nl/files/pacman.tar.gz</code>. Download dit bestand in je virtuele machine, en pak het uit. Ga vervolgens de map in die bij het uitpakken is aangemaakt.</div>
+  <div class="subopdracht">Om pacman te kunnen compileren hebben we eerst extra pakketten nodig, en alle afhankelijkheden die hierbij horen. Ook missen we nog het <code>make</code> commando. Installeer de pakketten <code>groff</code>, <code>libncurses5-dev</code>, <code>build-essential</code> en <code>make</code>.</div>
+  <div class="subopdracht">We kunnen nu het spel compileren met de commando’s: <code>./configure</code> en <code>make</code>. Dit kan even duren, en er kunnen waarschuwingen op het scherm te zien zijn, maar dit is niets om ons druk over te maken.</div>
   <div class="subopdracht">In de huidige map zou na het compileren een uitvoerbaar bestand bijgekomen moeten zijn, het pacman programma. Voer dit uit om het spel te spelen!</div>
 </div>
 
@@ -410,11 +410,11 @@ Commando             | Uitleg
 
 <div class="opdracht">
   <p>Opdracht 6</p>
-  <div class="subopdracht">Bekijk welke netwerkinterfaces er op dit moment aanwezig zijn en welke IP-adressen ze hebben. Voeg een extra IP-adres toe met het `ip` commando en kijk nogmaals naar het overzicht van ip-adressen. Reboot de virtuele machine en controleer of het adres nu niet meer aanwezig is.</div>
-  <div class="subopdracht">Kijk welke DNS-server er op dit moment gebruikt wordt en kijk met behulp van de commandline wat het IP-adres is van de hackenkunjeleren.nl server. Probeer daarna ook het commando `host hackenkunjeleren.nl` en kijk welke extra informatie je te zien krijgt.</div>
+  <div class="subopdracht">Bekijk welke netwerkinterfaces er op dit moment aanwezig zijn en welke IP-adressen ze hebben. Voeg een extra IP-adres toe met het <code>ip</code> commando en kijk nogmaals naar het overzicht van ip-adressen. Reboot de virtuele machine en controleer of het adres nu niet meer aanwezig is.</div>
+  <div class="subopdracht">Kijk welke DNS-server er op dit moment gebruikt wordt en kijk met behulp van de commandline wat het IP-adres is van de hackenkunjeleren.nl server. Probeer daarna ook het commando <code>host hackenkunjeleren.nl</code> en kijk welke extra informatie je te zien krijgt.</div>
   <div class="subopdracht">Maak een nieuw tekstbestand, plaats hierin de standaard firewallconfiguratie die eerder genoemd werd, sla dit bestand op en laad deze in iptables. Controleer of je wijzigingen actief zijn. Dump de huidige configuratie naar een nieuw bestand en vergelijk dit bestand met het tekstbestand wat je eerder aangemaakt hebt.</div>
   <div class="subopdracht">Zoek uit op welke poorten er op dit moment services luisteren op je systeem. Welke twee commando’s kun je hiervoor gebruiken?</div>
-  <div class="subopdracht">Installeer het `speedtest-cli` script en voer een speedtest uit. Komt de snelheid overeen met wat je thuis zou moeten hebben? Is het vergelijkbaar met een test op je eigen systeem in een browser op speedtest.net?</div>
+  <div class="subopdracht">Installeer het <code>speedtest-cli</code> script en voer een speedtest uit. Komt de snelheid overeen met wat je thuis zou moeten hebben? Is het vergelijkbaar met een test op je eigen systeem in een browser op speedtest.net?</div>
 </div>
 
 ---
