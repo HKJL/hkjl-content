@@ -38,7 +38,7 @@ Je ziet dat partities ook een eigen naam hebben gekregen in `/dev`, namelijk `sd
 
 De tweede partitie op de `sda` schijf heeft de naam `sda2` gekregen, er lijkt wel logica in te zitten! Nu er geen vrije ruimte meer is, kunnen we alle ruimte gaan gebruiken op onze harde schijven. Linux weet nu echter nog niet hoe er bestanden en mappen op gezet moeten worden, daarvoor moeten we de partities formatteren volgens een bepaald bestandssysteem.
 
-We gaan `sda1` formatteren als `ext3`, `sda2` gaan we gebruiken als `swap` partitie (dat is een stukje harde schijf die als RAM wordt gebruikt zodra je echte interne geheugen vol zit, net als het wisselbestand op Windows), en `sdb1` gaan we formattern als `btrfs`. Wat `ext3` en `btrfs` betekenen hoef je nu nog niet te weten. Hierna ziet het er als volgt uit:
+We gaan `sda1` formatteren als `ext3`, `sda2` gaan we gebruiken als `swap` partitie (dat is een stukje harde schijf die als RAM wordt gebruikt zodra je echte interne geheugen vol zit, net als het wisselbestand op Windows), en `sdb1` gaan we formatteren als `btrfs`. Wat `ext3` en `btrfs` betekenen hoef je nu nog niet te weten. Hierna ziet het er als volgt uit:
 
 ![De partities geformatteerd](images/linux-disks-04.png)
 
@@ -59,7 +59,7 @@ Commando                | Uitleg
 `fsck /dev/sda1`        | Voer een controle (**f**ile**s**ystem **c**hec**k**) uit van het bestandssysteem op de `/dev/sda1` partitie. Dit wordt tijdens het opstarten uitgevoerd als je een Linux-systeem zomaar uitzet zonder goed af te sluiten, om te voorkomen dat er bestanden verloren gaan. Dit kun je niet uitvoeren op partities die op dit moment gemount zijn.
 `mount`                 | Bekijk alle actieve mounts op het systeem.
 `mount /dev/sda2 /home` | Met het mount commando kunnen we ook handmatig mounts activeren. Dit voorbeeld zal de partitie `/dev/sda2` mounten als `/home`
-`umount /home`          | Unmounten, ofwel het ontkoppelen van een partitie, kan met het commando `umount`. Let op, zonder de letter 'n'. Dit is handig als je bijvoorbeeld een filesystem check wil uitvoeren, of een partitie wil aanpassen.
+`umount /home`          | Unmounten, ofwel het ontkoppelen van een partitie, kan met het commando `umount`. Let op, zonder de letter 'n'. Dit is handig als je bijvoorbeeld een filesystem check wil uitvoeren, of een partitie wil aanpassen. Zorg ervoor dat je niet op dit moment in de directory staat die je probeert te unmounten, anders krijg je waarschijnlijk foutmeldingen dat de partitie nog in gebruik is.
 `mount | grep ext`      | Met alleen `mount` krijgen we nogal een grote lijst mounts te zien. Hier zitten vooral allemaal interne Linux-zaken tussen die voor ons nu niet zo interessant zijn. Het commando hiernaast laat alle mounts zien die `ext` in hun informatie hebben staan. Voor onze Ubuntu VM zien we hier onze twee mounts, eentje op `/` en eentje op `/boot`. Een stuk overzichtelijker! Wat `grep` precies doet zien we in het volgende hoofdstuk.
 `mkfs.ext3`             | Met de `mkfs.*` commando’s kun je partities formatteren volgens een bepaald bestandssysteem. Dit kun je niet uitvoeren op bestandssystemen die al gemount zijn. Als je dit uitvoert op een bestaande partitie dan zullen je gegevens zeer waarschijnlijk niet meer terug te halen zijn, kijk hiermee dus uit!<br /><br />Probeer eens `mkfs` en vervolgens 2x de Tab toets in te drukken, om te zien welke commando’s er allemaal zijn die met mkfs beginnen.
 `du`                    | Met `du` kun je bekijken hoeveel ruimte er gebruikt wordt in de huidige map. Je kan aan du ook opties meegeven zoals `-s` voor een optelsom van alle mappen onder de huidige map, of `-h` voor human-readable getallen in plaats van alleen maar bytes. Ook kun je aan `du` een argument meegeven als je niet de huidige map maar een andere plek in het bestandssysteem wil opzoeken. Probeer bijvoorbeeld eens: `du -sh /etc`
@@ -74,6 +74,18 @@ Bestand      | Uitleg
 ------------ | ------------
 `/etc/fstab` | In dit bestand staan de mounts die door de gebruiker zijn ingesteld, en welke mounts er bij het opstarten van linux actief moeten worden. Ook staan hier nog enkele ‘flags’ zoals bijvoorbeeld het wel of niet uitvoeren van een fsck als het systeem uitgevallen is.
 `/etc/mtab`  | Dit bestand wordt door Linux aangemaakt op basis van ons /etc/fstab bestand, zodra we terwijl Linux draait zelf nog mounts of umounts uitvoeren kun je ze in dit bestand zien verschijnen of verdwijnen. Als je een mount handmatig hebt uitgevoerd kun je de betreffende regel uit /etc/mtab kopieren naar /etc/fstab zodat deze bij het opstarten ook weer actief wordt.
+
+## Soorten partities: Primary, Extended, Logical
+
+Tot nu hebben we het over partities gehad alsof een disk in oneindig veel stukjes opgedeeld kan worden die allemaal gelijkwaardig zijn, maar doordat er in het verleden standaarden zijn geweest die limieten op het aantal partities hebben gelegd is hierin wat onderscheid te maken. 
+
+De manier waarop onze disk ingedeeld is staat beschreven in een klein stukje aan het begin van de schijf, genaamd het Master Boot Record (MBR). Dit gebeurt volgens een standaard die al in 1983 werd vastgelegd en waarin een partitietabel beschreven wordt met maximaal 4 partities. Deze 4 partities noemen we _primary_ partities. In zo'n partitietabel staat bijvoorbeeld voor elke partitie waar hij fysiek op de harde schijf begint en eindigt.
+
+Al snel na de introductie van de MBR standaard werd duidelijk dat er soms meer dan 4 partities nodig zijn, waardoor een uitbereiding op deze indeling werd bedacht in de vorm van een _extended_ partitie: een van de primary partities kan als _extended_ partitie dienen, waarna het mogelijk is om hierin toch meerdere partities te maken, ondanks de limiet van 4. Deze extra partities worden _logical_ partities genoemd, en deze beginnen en eindigen dus binnen de ruimte die de extended partitie in beslag neemt:
+
+![Grafische weergave van partities](images/partities.png)
+
+Het is gebruikelijk dat de eerste 4 partitienamen sdX1 t/m sdX4 gereserveerd worden voor de primary partities, waardoor de eerste logical partitie meestal <code>sda5</code> heet, dit is ook in de afbeelding hierboven afgebeeld.
 
 ## LVM ofwel de Logical Volume Manager
 
@@ -90,17 +102,24 @@ Met de volgende commando’s kun je deze 3 verschillende objecten bekijken:
 
 Commando    | Uitleg
 ----------- | -----------
-`vgscan`    | 
-`vgdisplay` | 
-`pvscan`    | 
-`pvdisplay` | 
-`lvscan`    | 
-`lvdisplay` | 
+`vgdisplay` | Bekijk alle details over de LVM Volume Groups
+`pvdisplay` | Bekijk alle details over de LVM Physical Volumes
+`lvdisplay` | Bekijk alle details over de LVM Logical Volumes
+
+We hebben eerder het commando <code>fdisk -l</code> gezien om alle disks en partities te kunnen tonen. Het is belangrijk om te weten dat de LVM Logical Volumes in de uitvoer van dit commando ook als disk worden getoond. De naam van zulke disks is als volgt opgesteld: <code>/dev/mapper/[naam volume group]-[naam logical volume]</code>.
 
 <div class="opdracht">
   <p>Opdracht 1</p>
-  <div class="subopdracht">Laten we beginnen met het verkennen van onze huidige disk. Bekijk welke disks en welke partities er op je systeem aanwezig zijn, en hoe groot ze zijn in MB of GB.</div>
-  <div class="subopdracht">Bekijk nu eens de inhoud van je /etc/fstab bestand en vergelijk dit met de partities die je gevonden hebt.</div>
+  <div class="subopdracht">Hoeveel disks zijn er op dit moment op je Ubuntu VM? Hoeveel hiervan zijn eigenlijk LVM Logical Volumes?</div>
+  <div class="subopdracht">Als het goed is heb je 1 'echte' disk gevonden, welke partities zijn er op deze disk aanwezig? Wat voor type partities zijn dit? (Primary, Extended of Logical)</div>
+  <div class="subopdracht">Hoe is LVM ingesteld op je systeem? Beschrijf welke volume groups er zijn, op welke physical volumes ze staan en welke logical volumes ze bevatten.</div>
+  <div class="subopdracht">Welke mounts zijn er op dit moment actief met als type <code>ext2</code> of <code>ext4</code>?</div>
+  <div class="subopdracht">Hoe groot zijn alle gemounte partities en hoeveel ruimte is er nog op beschikbaar? Je kan de <code>udev</code> en <code>tmpfs</code> partities negeren.</div>
+  <div class="subopdracht">Stop je VM en voeg er een disk aan toe. Ga hiervoor naar de instellingen van je VM, klik vervolgens op Opslag &rarr; Controller: SATA &rarr; Disk-toevoeg-knopje (het vierkante knopje naast Controller: SATA) &rarr; Maak een nieuwe schijf aan &rarr; Doorgaan (VDI) &rarr; Doorgaan (Dynamisch gealloceerd) &rarr; Vul een leuke naam in en stel een grootte in van 1GB &rarr; Aanmaken &rarr; Ok. Start je VM weer op en kijk of je nieuwe disk zichtbaar is.</div>
+  <div class="subopdracht">We willen onze nieuwe disk gaan gebruiken. Deel je disk op in 2 partities van ongeveer gelijke grootte, formatteer 1 van deze partities als <code>ext4</code> en de andere als <code>btrfs</code>. Tenslotte willen we de eerste disk mounten onder <code>/extradisks/een</code> en de tweede onder <code>/extradisks/twee</code>. Tip: maak deze paden aan als map voordat je ze mount op je nieuwe partities!</div>
+  <div class="subopdracht">Bekijk na het uitvoeren van deze acties nog eens de disks, partities en mounts op het systeem. Maak wat bestanden en mappen aan op je nieuwe mounts, of kopieer bestaande bestanden of mappen hierheen.</div>
+  <div class="subopdracht">We willen onze nieuwe partitie <code>/dev/sdb1</code> op een betrouwbare manier wissen (niet met alleen maar <code>rm</code> dus!). Bekijk daarna nog eens de inhoud van deze partities, lukt dat? Probeer te verklaren wat er gebeurt.</div>
+  <div class="subopdracht">Voer een filesystem check uit op <code>/dev/sdb1</code>, kunnen we dit filesystem nog redden?</div>
 </div>
 
 ---
@@ -171,7 +190,16 @@ Hieronder zijn per opdracht de antwoorden te bekijken, door op de juiste opdrach
 <details>
   <summary>Opdracht 1</summary>
   <ul>
-    <li></li>
+    <li>Met het commando <code>sudo fdisk -l</code> zien we 3 disks: <code>/dev/sda</code>, <code>/dev/mapper/ubuntu--vg-root</code> en <code>/dev/mapper/ubuntu--vg/swap_1</code>. De laatste twee zijn LVM Logical Volumes, te herkennen aan de naam die begint met <code>/dev/mapper/</code>.</li>
+    <li>De echte disk is <code>/dev/sda</code>, in de uitvoer van het vorige commando zagen we hiervan ook de partitietabel met daarin 3 partities: <code>/dev/sda1</code> (Primary), <code>/dev/sda2</code> (Primary, Extended) en <code>/dev/sda5</code> (Logical). Je kan de partitietabel ook bekijken door <code>sudo fdisk /dev/sda</code> te starten en het commando <code>p</code> te geven. Bonus: Door te kijken naar de 'Start' en 'End' getallen kun je ook zien dat <code>sda5</code> op de extended partitie <code>sda2</code> staat.</li>
+    <li><code>sudo vgdisplay</code> laat 1 Volume Group zien met de naam <code>ubuntu-vg</code>. <code>sudo pvdisplay</code> laat ons het physical volume (PV) <code>/dev/sda5</code> zien met daaraan gekoppeld de volume group (VG) <code>ubuntu-vg</code>. Tenslotte bekijken we met <code>sudo lvdisplay</code> de Logical volumes, waarvan er twee aanwezig zijn op de <code>ubuntu-vg</code> volume group; <code>root</code> en <code>swap_1</code>.</li>
+    <li>Met het commando <code>mount | grep ext</code> zien we twee mounts, <code>/dev/mapper/ubuntu--vg-root</code> wat gemount is als <code>/</code> en <code>/dev/sda1</code> wat gemount is als <code>/boot</code>.</li>
+    <li>Met het commando <code>df -h</code> zien we diezelfde twee mounts weer terug, <code>/</code> heeft op mijn systeem een grootte van 8.8G waarvan nog 6.3G vrij is en <code>/boot</code> is 472MB groot en heeft 342MB beschikbaar. Deze waarden kunnen natuurlijk wat verschillen van jouw eigen Ubuntu VM.</li>
+    <li>Als de stappen goed gegaan zijn heb je nu in de uitvoer van <code>sudo fdisk -l</code> ook een <code>/dev/sdb</code>!</li>
+    <li>Voer de volgende commando's uit: <code>sudo fdisk /dev/sdb</code>, <code>n</code> (nieuwe partitie), <code>p</code> (Primary), <code>[enter]</code> (Default partition number), <code>[enter]</code> (Default first sector, we willen aan het begin van de disk starten), <code>+500M</code> (Ongeveer de helft van de 1GB disk die we hebben aangemaakt). Tweede partitie op dezelfde manier maar bij 'Last sector' kiezen we voor de standaardwaarde, zodat de hele disk gevuld is. Nu schrijven we de partitietabel naar de disk en verlaten we fdisk met het commando <code>w</code>. We kijken opnieuw naar <code>sudo fdisk -l</code> en zien dat onze nieuwe partities <code>/dev/sdb1</code> en <code>/dev/sdb2</code> heten. We formatteren de eerste als ext4 met het commando <code>sudo mkfs.ext4 /dev/sdb1</code> en de tweede als btrfs met <code>sudo mkfs.btrfs /dev/sdb2</code>. We maken nu de mappen aan waarop we willen mounten: <code>sudo mkdir -p /extradisks/een</code> en <code>sudo mkdir -p /extradisks/twee</code>, en mounten daarna onze partities hierop met <code>sudo mount /dev/sdb1 /extradisks/een</code> en <code>sudo mount /dev/sdb2 /extradisks/twee</code>.</li>
+    <li>(Eigen invulling, gebruik commando's zoals <code>sudo fdisk -l</code>, <code>df -h</code> en <code>mount</code>)</li>
+    <li>Het wissen kan met het commando <code>sudo shred /dev/sdb1</code> (kan eventjes duren), als we hierna in de map <code>/extradisks/een</code> bijvoorbeeld <code>ls</code> uitvoeren krijgen we allerlei rare foutmeldingen over EXT-fs, waarschijnlijk heeft de shred actie ons ext4 bestandssysteem beschadigd.</li>
+    <li>We verlaten de directory <code>/extradisks/een</code> (als je hierin stond) met bijvoorbeeld <code>cd /</code> en unmounten deze partitie met <code>sudo umount /extradisks/een</code>. Nu kunnen we een filesystem check uitvoeren met <code>sudo fsck /dev/sdb1</code>. Helaas kan deze onze partitie na een <code>shred</code> ook niet meer redden (maar dit was natuurlijk ook de bedoeling van dat commando :-)).</li>
   </ul>
 </details>
 
